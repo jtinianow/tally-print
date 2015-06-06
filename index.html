@@ -1,13 +1,40 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Tally Print
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+<section class="header wrapper">
+	<h1>
+		<img class="header-img" src="/content/TallyPrint_Lockup_Vert_Color_200pxW.png" alt="Tally Print">
+	</h1>
+	<h2 class="subheader">Coming Soon<span class="subheader--parenth">(ish)</span></h2>
+</section>
+
+<section class="about wrapper">
+	<h2 class="about__header">What is Tally Print?</h2>
+	<p class="about__body">Tally Print is a collection of hand-picked, high-quality works on paper submitted by the creative community &amp; crowdfunded by visual art enthusiasts. Designers, illustrators, and artists submit print work, and we handle the grunt work of printing, processing payments, and logistics &amp; fulfillment.</p>
+	<p class="about__body">Tally Print is still in the works. If you’d like to stay up to date, please sign up for our mailing list, and we’ll let you know as soon as we’re up and running.</p>
+
+	{% include mailchimp-signup.html %}
+
+</section>
+
+<section class="footer">
+	<div class="wrapper">
+		<p class="footer__desc">Built with Love in Sunny Colorado, U.S.A.</p>
+		<a href="mailto:jeremy@tinyeahno.com" class="footer__contact">Contact Us</a>
+	</div>
+</section>
+
+<div class="reg reg--upper-left">
+	<img class="reg__img" src="/content/reg.png" alt="">
+</div>
+<div class="reg reg--upper-right">
+	<img class="reg__img" src="/content/reg.png" alt="">
+</div>
+<div class="reg reg--lower-left">
+	<img class="reg__img" src="/content/reg.png" alt="">
+</div>
+<div class="reg reg--lower-right">
+	<img class="reg__img" src="/content/reg.png" alt="">
 </div>

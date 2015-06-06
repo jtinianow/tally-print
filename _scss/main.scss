@@ -1,6 +1,130 @@
 @import "reset";
-@import "syntax";
+@import "jeet/index";
+@import "variables";
 
+/*****************************************************************************/
+/*
+/* Base Styles
+/*
+/*****************************************************************************/
 body {
-    background: white;
+	font-family: $base-font-family;
+	font-size: $base-font-size*0.6;
+	line-height: $base-line-height;
+	color: $text-color;
+	background: $background-color;
+	-webkit-text-size-adjust: 100%;
+	@media (min-width: 768px) {
+		font-size: $base-font-size;
+	}
+}
+
+
+.wrapper{
+	max-width: 620px;
+	margin: 0 $spacing-unit/2;
+	@media (min-width: 650px) { margin: 0 auto; }
+}
+
+p { line-height: $base-line-height*0.9; }
+
+.header-img {
+	width: 40%;
+	height: auto;
+	@media (min-width: 700px) {
+		width: auto;
+	}
+}
+
+
+/*****************************************************************************/
+/*
+/* Modules
+/*
+/*****************************************************************************/
+
+.header {
+	margin-top: $spacing-unit*4;
+	margin-bottom: $spacing-unit*2;
+	text-align: center;
+}
+
+.subheader {
+	&--parenth { color: $blue; }
+}
+
+.about {
+	margin-bottom: $spacing-unit*2;
+	&__header { margin-bottom: $spacing-unit/2; }
+}
+
+/* Mailchimp Signup */
+#mc_embed_signup_scroll { margin-top: $spacing-unit*2; }
+
+#mc_embed_signup form { padding: 0; }
+#mc_embed_signup {
+	font-family: $base-font-family;
+	background: transparent;
+}
+
+input { font-family: $base-font-family;}
+
+#mc_embed_signup label,
+input {
+	font-size: $base-font-size*0.6;
+	font-weight: $base-font-weight;
+	text-align: center;
+	@media (min-width: 768px) {
+		font-size: $base-font-size;
+	}
+
+}
+
+#mc_embed_signup input.email,
+#mc_embed_signup input.button { margin: 0 auto; }
+
+#mc_embed_signup input.button {
+	margin-top: $spacing-unit/3;
+	font-size: $base-font-size*0.6;
+	font-weight: $base-font-weight;
+	height: $spacing-unit;
+	background-color: $blue;
+	transition: background-color 0.2s ease-in-out;
+	@media (min-width: 768px) {
+		font-size: $base-font-size;
+	}
+	&:hover { background-color: darken($blue, 5%); }
+}
+
+
+
+.footer {
+	padding-top: $spacing-unit;
+	padding-bottom: $spacing-unit/2;
+	color: darken($light-grey, 30%);
+	background: $light-grey;
+	&__desc,
+	&__contact { display: inline-block; }
+	&__contact {
+		float: right;
+		text-decoration:underline;
+		&:hover { text-decoration: underline; }
+	}
+}
+
+/* Registration Marks */
+.reg {
+	display: none;
+	position: fixed;
+	z-index: 1001;
+	opacity: 0.6;
+	@media (min-width: 768px ) { display: block; }
+	&--upper-left,
+	&--upper-right { top: $spacing-unit/2; }
+	&--lower-left,
+	&--upper-left { left: $spacing-unit/2; }
+	&--lower-right,
+	&--upper-right { right: $spacing-unit/2; }
+	&--lower-left,
+	&--lower-right { bottom: $spacing-unit/2; }
 }
