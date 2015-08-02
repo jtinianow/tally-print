@@ -1,0 +1,24 @@
+/*****************************************************************************/
+/*
+/* Mixins
+/*
+/*****************************************************************************/
+
+/* Layout
+******************************************************************************/
+@mixin container {
+	@include cf();
+	position: relative;
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 0 20px;
+	max-width: $container;
+	width: 100%;
+	@media (min-width: 400px) {
+		padding: 0;
+		width: 85%;
+	}
+	@media (min-width: 550px) { width: 80%; }
+}
+
+

@@ -1,0 +1,74 @@
+/*****************************************************************************/
+/*
+/* Type
+/*
+/*****************************************************************************/
+
+
+/* Variables
+/*****************************************************************************/
+
+// Families
+$base-font-family: "inconsolata", Georgia, Times, serif;
+$display-font-family: "refrigerator-deluxe", 'Refrigerator Deluxe', Helvetica, Arial, sans-serif;
+$body-font-family: "effra", 'Effra', Helvetica, Arial, sans-serif;
+
+// Sizes
+$small-font-size: 0.88rem;
+$base-font-size: 1rem;
+$med-font-size: 2.22rem;
+$large-font-size: 4rem;
+
+// Weights
+$base-font-weight: 500;
+
+// Line-Height
+$base-line-height: 1.5;
+
+
+/* Stacks
+/*****************************************************************************/
+
+// Body
+%font-stack--body { font-family: $body-font-family; }
+
+// Headers
+%font-stack--headers { font-family: $display-font-family; }
+
+// Subheaders
+%font-stack--subheaders { font-family: $base-font-family; }
+
+
+/* Styles
+/*****************************************************************************/
+
+// Body
+%type-base--body {
+	@extend %font-stack--body;
+	font-size: $base-font-size;
+	font-weight: 400;
+	line-height: $base-line-height*0.95;
+	color: $text-color;
+	&--bold { font-weight: 500; }
+	&--light { color: lighten($text-color, 20%); }
+}
+
+// Headers
+%type-base--header-a {
+	@extend %font-stack--headers;
+	font-size: $med-font-size;
+	font-weight: 300;
+	line-height: 1;
+	@media (min-width: 1024px) { font-size: $large-font-size; }
+}
+
+// Subheaders
+%type-base--subheader-a {
+	@extend %font-stack--subheaders;
+	font-size: $base-font-size;
+	line-height: $base-line-height*0.95;
+	color: $text-color;
+}
+
+
+

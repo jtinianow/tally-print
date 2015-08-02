@@ -1,0 +1,23 @@
+.footer,
+.footer__contact {
+	@extend %type-base--subheader-a;
+	color: lighten($text-color, 20%);	
+}
+
+.footer__contact:hover,
+.footer__contact:focus,
+.footer__contact:active { color: $text-color; }
+
+.footer {
+	margin-top: $spacing-unit;
+	padding-top: $spacing-unit;
+	padding-bottom: $spacing-unit/2;
+	background: $light-grey;
+	&__desc,
+	&__contact { display: inline-block; }
+	&__contact {
+		float: right;
+		text-decoration:underline;
+		&:hover { text-decoration: underline; }
+	}
+}

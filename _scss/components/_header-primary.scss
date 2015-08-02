@@ -1,0 +1,14 @@
+.header-primary__wrapper {
+	padding: $spacing-unit/4 0;
+	background-color: $text-color;
+}
+
+.header-primary {
+	@include container;
+	line-height: 1;
+}
+
+.header-primary__logo {
+	display: inline-block;
+	vertical-align: baseline;
+}

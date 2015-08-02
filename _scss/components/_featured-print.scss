@@ -1,0 +1,103 @@
+/* Featured Print */
+.feature__wrapper,
+.feature { box-sizing: border-box; }
+
+.feature__wrapper {
+	padding: $spacing-unit/2 0;
+	width: 100%;
+	background-color: #71a1c5;
+	background-image: url('/content/bg-pattern_v1.png');
+}
+
+.feature {
+	position: relative;
+	display: table;
+	margin: 0 auto;
+	max-width: $container;
+	width: 100%;
+	background: $background-color;
+}
+
+.feature__img-wrapper,
+.feature__text {
+	@media (min-width: 768px) { display: table-cell; }
+}
+
+.feature__img-wrapper {
+	line-height: 0;
+	@media (min-width: 768px) { @include span(1/3); }
+}
+
+.feature__img {
+	width: 100%;
+	height: auto;
+}
+
+.feature__text {
+	padding-bottom: $spacing-unit;
+	@media (min-width: 768px) {
+		@include span(2/3);
+		position: absolute;
+		top: 50%;
+		right: 0;
+		padding-bottom: 0;
+		transform: translateY(-50%);
+	}
+}
+
+.feature__label { @extend %type-base--subheader-a; }
+
+.feature__label,
+.feature__title,
+.feature__stats,
+.feature__counter,
+.feature__footer {
+	margin: $spacing-unit/4 $spacing-unit/2;
+	text-align: center;
+}
+
+.feature__title {
+	@extend %type-base--header-a;
+	margin: 0 auto;
+	width: 80%;
+}
+
+.feature__artist,
+.feature__counter {
+	margin-bottom: $spacing-unit/2;
+	@media (min-width: 1024px) { margin-bottom: $spacing-unit; }
+}
+
+.feature__stats,
+.feature__btn {
+	@extend %type-base--body;
+	letter-spacing: 0.25px;
+	@media (min-width: 1024px) { font-size: $base-font-size; }
+}
+
+.feature__stats--em { @extend %type-base--body--bold; }
+
+.feature__counter-unit {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 10px;
+	height: 10px;
+	border: 2px solid $blue;
+	border-radius: 5px;
+	background-color: $background-color;
+}
+
+.feature__counter-unit--full {
+	@extend .feature__counter-unit;
+	background-color: $blue;
+}
+
+.feature__btn {
+	padding: $spacing-unit/6 $spacing-unit/2;
+	background-color: $magenta;
+	color: $background-color;
+	transition: background-color 100ms ease-in;
+	&:hover,
+	&:focus { background-color: lighten($magenta, 10%); }
+	&:active { background-color: darken($magenta, 10%); }
+}

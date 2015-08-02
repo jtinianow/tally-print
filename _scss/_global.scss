@@ -1,0 +1,108 @@
+/*****************************************************************************/
+/*
+/* Base Styles
+/*
+/*****************************************************************************/
+body {
+	font-size: $base-font-size;
+	background: $background-color;
+	color: $text-color;
+
+	-webkit-text-size-adjust: 100%;
+}
+
+
+.wrapper{
+	margin: 0 $spacing-unit/2;
+	max-width: 620px;
+	@media (min-width: 650px) { margin: 0 auto; }
+}
+
+.header-img {
+	width: 40%;
+	height: auto;
+	@media (min-width: 700px) {
+		width: auto;
+	}
+}
+
+.logo--one-color--horizontal--white path { fill: $background-color; }
+
+/*****************************************************************************/
+/*
+/* Modules
+/*
+/*****************************************************************************/
+
+.header {
+	margin-top: $spacing-unit*4;
+	margin-bottom: $spacing-unit*2;
+	text-align: center;
+}
+
+.subheader {
+	@extend %type-base--subheader-a;
+	&--parenth { color: $blue; }
+}
+
+.about {
+	margin-bottom: $spacing-unit*2;
+	&__header { margin-bottom: $spacing-unit/2; }
+	&__header,
+	&__body { @extend %type-base--subheader-a; }
+}
+
+
+/* Mailchimp Signup */
+#mc_embed_signup_scroll { margin-top: $spacing-unit*2; }
+
+#mc_embed_signup form { padding: 0; }
+#mc_embed_signup {
+	font-family: $base-font-family;
+	background: transparent;
+}
+
+input { font-family: $base-font-family;}
+
+#mc_embed_signup label,
+input {
+	font-size: $base-font-size*0.6;
+	font-weight: $base-font-weight;
+	text-align: center;
+	@media (min-width: 768px) {
+		font-size: $base-font-size;
+	}
+}
+
+#mc_embed_signup input.email,
+#mc_embed_signup input.button { margin: 0 auto; }
+
+#mc_embed_signup input.button {
+	margin-top: $spacing-unit/3;
+	height: $spacing-unit;
+	font-size: $base-font-size*0.6;
+	font-weight: $base-font-weight;
+	background-color: $blue;
+	transition: background-color 0.2s ease-in-out;
+	@media (min-width: 768px) {
+		font-size: $base-font-size;
+	}
+	&:hover { background-color: darken($blue, 5%); }
+}
+
+/* Registration Marks */
+.reg {
+	position: fixed;
+	z-index: 1001;
+	display: none;
+	opacity: 0.6;
+	@media (min-width: 768px ) { display: block; }
+	&--upper-left,
+	&--upper-right { top: $spacing-unit/2; }
+	&--lower-left,
+	&--upper-left { left: $spacing-unit/2; }
+	&--lower-right,
+	&--upper-right { right: $spacing-unit/2; }
+	&--lower-left,
+	&--lower-right { bottom: $spacing-unit/2; }
+}
