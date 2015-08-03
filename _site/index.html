@@ -16,11 +16,9 @@
         <link rel="stylesheet" href="/css/main.css">
 
     </head>
-    <body>
-
+    <body onload="init();">
         <div class="site">
-          
-
+        
           <div class="header-primary__wrapper">
 	<header class="header-primary">
 		<span class="header-primary__logo logo--one-color--horizontal--white"><a href="/" class="header-primary__home-link"><svg class="logo--one-color--horizontal" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -41,9 +39,11 @@
 </div>
 
 <section class="header wrapper">
-	<h1>
+	<canvas id="demoCanvas" width="500" height="300"></canvas>
+<!-- 	<h1>
 		<img class="header-img" src="/content/TallyPrint_Lockup_Vert_Color_200pxW.png" alt="Tally Print">
-	</h1>
+	</h1> -->
+	<!-- <h1 class="site-header">Tally Print</h1> -->
 	<h2 class="subheader">Coming Soon<span class="subheader--parenth">(ish)</span></h2>
 </section>
 
@@ -77,19 +77,71 @@
 </section>
 
 
+<!-- Easel JS -->
+<script src="https://code.createjs.com/easeljs-0.8.1.min.js"></script>
+<!-- Placeholder Easel Script -->
+<script>
+	var stage = new createjs.Stage("demoCanvas");
+	var logoOver = new createjs.Container();
+	var logoMag = new createjs.Container();
+	var logoCyan = new createjs.Container();
+	var logoContainer = new createjs.Container();
+
+	var lockup = new createjs.Bitmap("/content/TallyPrint_Lockup_Vert_Color_200pxW.png");
+	var lockupContainer = new createjs.Container();
+
+	function init() {
+
+		lockup.regX = 50;
+		lockup.regY = 50;
+		lockup.scaleX = 1.2;
+		lockup.scaleY = 1.2;
+		lockup.alpha = 0
+
+		lockupContainer.addChild(lockup);
+		lockupContainer.regX = 50;
+		lockupContainer.x = 0;
+		lockupContainer.y = 0;
+
+		stage.addChild(lockupContainer)
+		lockup.x = 250;
+		lockup.y = 150;
+
+		stage.update();
+		console.log(stage.width);
+
+		createjs.Ticker.on("tick", tick);
+		createjs.Ticker.setFPS(30);
+	}
+
+	function tick(event) {
+
+		if (lockup.scaleX > 1) {
+			lockup.scaleX = lockup.scaleX - 0.05;
+		}
+		if (lockup.scaleY > 1) {
+			lockup.scaleY = lockup.scaleY -0.05;
+		}
+		if (lockup.alpha < 1) {
+			lockup.alpha = lockup.alpha + 0.1;
+		}
+
+		stage.update(event);
+	}
+</script>
+
 <div class="reg reg--upper-left">
-	<img class="reg__img" src="/content/reg.png" alt="">
+	<img class="reg__img" src="/content/reg.png" alt="" height="32" width="32">
 </div>
 <div class="reg reg--upper-right">
-	<img class="reg__img" src="/content/reg.png" alt="">
+	<img class="reg__img" src="/content/reg.png" alt="" height="32" width="32">
 </div>
 <div class="reg reg--lower-left">
-	<img class="reg__img" src="/content/reg.png" alt="">
+	<img class="reg__img" src="/content/reg.png" alt="" height="32" width="32">
 </div>
 <div class="reg reg--lower-right">
-	<img class="reg__img" src="/content/reg.png" alt="">
+	<img class="reg__img" src="/content/reg.png" alt="" height="32" width="32">
 </div>
-
 
 
 

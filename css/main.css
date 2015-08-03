@@ -238,7 +238,7 @@ ol {
 .feature__btn {
   font-family: "effra", "Effra", Helvetica, Arial, sans-serif; }
 
-.feature__title {
+.feature__title, .site-header {
   font-family: "refrigerator-deluxe", "Refrigerator Deluxe", Helvetica, Arial, sans-serif; }
 
 .subheader, .about__header,
@@ -257,12 +257,12 @@ ol {
   .feature__stats--em {
     font-weight: 500; }
 
-.feature__title {
+.feature__title, .site-header {
   font-size: 2.22rem;
   font-weight: 300;
   line-height: 1; }
   @media (min-width: 1024px) {
-    .feature__title {
+    .feature__title, .site-header {
       font-size: 4rem; } }
 
 .subheader, .about__header,
@@ -540,3 +540,6 @@ input {
     background-color: #ff20a4; }
   .feature__btn:active {
     background-color: #b9006e; }
+
+.site-header {
+  font-size: 3.5rem; }
